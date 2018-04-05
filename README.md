@@ -1,3 +1,5 @@
+DCG: Gramática Portuguesa
+
 Instruções de compilação:
 No diretório onde está guardado o trabalho escrever: swipl.
 Compilar o primeiro ponto do trabalho: "[ponto1]." ou "['ponto1.pl']." (sem aspas).
