@@ -1,4 +1,4 @@
-DCG: Gramática Portuguesa
+2ºProblema: Gramática Portuguesa
 
 Instruções de compilação:
 No diretório onde está guardado o trabalho escrever: swipl.
