@@ -3,6 +3,7 @@ Ponto 1 do trabalho: Planear Viagens (guardado no ficheiro viagens.pl)
 Ponto 2 do trabalho: Gramática Portuguesa (guardado no ficheiro gramatica.pl)
 <br />
 
+
 ### Instruções de compilação:
 
 No diretório onde está guardado o trabalho escrever:
