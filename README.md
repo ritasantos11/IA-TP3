@@ -16,5 +16,5 @@ Instruções de executação do ponto 2:
 
 Verificar se, por exemplo, a frase "O rio corre para o mar" está correta e qual a sua árvore sintática: sentence(X,['O',rio,corre,para,o,mar],[]).
 
-Ver todas as frases possíveis e as suas respetivas árvores sintáticas:
+Gerar todas as frases possíveis e respetivas árvores sintáticas:
 sentence(X,L,[]). inserindo sempre ponto e vírgula para mostrar mais output.
