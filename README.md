@@ -7,17 +7,17 @@ Ponto 2 do trabalho: Gramática Portuguesa (guardado no ficheiro gramatica.pl)
 
 No diretório onde está guardado o trabalho escrever:
 ````Bash
-swipl.
+$ swipl.
 ````
 
 Compilar o ponto 1:
 ````ProLog
-[viagens].
+?- [viagens].
 ````
 
 Compilar o segundo ponto:
 ````ProLog
-[gramatica].
+?- [gramatica].
 ````
 <br />
 ### Instruções de executação do ponto 2:
