@@ -16,7 +16,7 @@ Compilar o ponto 1:
 ?- [viagens].
 ````
 
-Compilar o segundo ponto:
+Compilar o ponto 2:
 ````ProLog
 ?- [gramatica].
 ````
