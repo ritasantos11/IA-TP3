@@ -8,7 +8,7 @@ Ponto 2 do trabalho: Gramática Portuguesa (guardado no ficheiro gramatica.pl)
 
 No diretório onde está guardado o trabalho escrever:
 ````Bash
-$ swipl.
+$ swipl
 ````
 
 Compilar o ponto 1:
