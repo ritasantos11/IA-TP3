@@ -20,6 +20,7 @@ Compilar o segundo ponto:
 ?- [gramatica].
 ````
 <br />
+
 ### Instruções de executação do ponto 2:
 
 Verificar se, por exemplo, a frase "O rio corre para o mar" está correta e qual a sua árvore sintática:
