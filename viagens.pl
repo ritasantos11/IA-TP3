@@ -20,14 +20,12 @@ route(Origin, Destination, Day, [(Origin-Place:FNum1:DepTime1)|RestRoute]) :-
 	deptime(RestRoute,DepTime2),
 	transfer(ArrTime1,DepTime2).
 
-
 % diz a Hora de Partida da Rota [_-_:_:DepTime]
 deptime([_-_:_:DepTime], DepTime).
 
 % há uma distância de pelo menos 40 minutos para se conseguir fazer transferência para outro voo
 transfer(Hour1:Min1,Hour2:Min2) :-
 	60*(Hour2-Hour1) + Min2-Min1 >= 40.
-
 
 
 % timetable(Origin, Destination, [DepartureTime/ArrivalTime/FlightNumber/[Days]|L]).
