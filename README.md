@@ -1,7 +1,6 @@
 ### Versão do Sistema utilizado:
 Linux rita-ubuntu 4.13.0-37-generic #42~16.04.1-Ubuntu SMP Wed Mar 7 16:03:28 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
 <br />
-<br />
 
 Ponto 1 do trabalho: Planear Viagens (guardado no ficheiro viagens.pl)
 
@@ -27,7 +26,20 @@ Compilar o ponto 2:
 ````
 <br />
 
+### Instruções de execução do ponto 1:
+Saber informações do voo (dia, número, hora de partida, hora de chegada) de Origin até Destination:
+````ProLog
+flight(Origin,Destination,Day,FlightNum,DepTime,ArrTime).
+````
+
+Saber a rota num determinado dia de Origin até Destination onde Route é dada da seguinte forma: [Origin-Destination:FlightNum:DepartureTime]:
+````Prolog
+route(Origin,Destination,Day,Route).
+````
+<br />
+
 ### Instruções de executação do ponto 2:
+
 Verificar se, por exemplo, a frase "O rio corre para o mar" está correta e qual a sua árvore sintática:
 ````ProLog
 sentence(X,['O',rio,corre,para,o,mar],[]).
@@ -37,4 +49,3 @@ Gerar todas as frases possíveis e respetivas árvores sintáticas (inserindo se
 ````ProLog
 sentence(X,L,[]).
 ````
-<br />
