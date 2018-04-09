@@ -28,7 +28,6 @@ Compilar o ponto 2:
 <br />
 
 ### Instruções de executação do ponto 2:
-
 Verificar se, por exemplo, a frase "O rio corre para o mar" está correta e qual a sua árvore sintática:
 ````ProLog
 sentence(X,['O',rio,corre,para,o,mar],[]).
