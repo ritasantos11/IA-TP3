@@ -1,3 +1,7 @@
+### Versão do Sistema utilizado:
+Linux rita-ubuntu 4.13.0-37-generic #42~16.04.1-Ubuntu SMP Wed Mar 7 16:03:28 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+<br />
+
 Ponto 1 do trabalho: Planear Viagens (guardado no ficheiro viagens.pl)
 
 Ponto 2 do trabalho: Gramática Portuguesa (guardado no ficheiro gramatica.pl)
@@ -33,3 +37,4 @@ Gerar todas as frases possíveis e respetivas árvores sintáticas (inserindo se
 ````ProLog
 sentence(X,L,[]).
 ````
+<br />
