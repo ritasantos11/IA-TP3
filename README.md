@@ -31,12 +31,12 @@ Compilar o ponto 2:
 ### Instruções de execução do ponto 1:
 Saber informações do voo (dia, número, hora de partida, hora de chegada) de Origin até Destination:
 ````ProLog
-?- flight(Origin,Destination,Day,FlightNum,DepTime,ArrTime).
+flight(Origin,Destination,Day,FlightNum,DepTime,ArrTime).
 ````
 
 Saber a rota num determinado dia de Origin até Destination onde Route é dada da seguinte forma: [Origin-Destination:FlightNum:DepartureTime]:
 ````Prolog
-?- route(Origin,Destination,Day,Route).
+route(Origin,Destination,Day,Route).
 ````
 <br />
 
@@ -44,10 +44,10 @@ Saber a rota num determinado dia de Origin até Destination onde Route é dada d
 
 Verificar se, por exemplo, a frase "O rio corre para o mar" está correta e qual a sua árvore sintática:
 ````ProLog
-?- sentence(X,['O',rio,corre,para,o,mar],[]).
+sentence(X,['O',rio,corre,para,o,mar],[]).
 ````
 
 Gerar todas as frases possíveis e respetivas árvores sintáticas (inserindo sempre ponto e vírgula para mostrar mais output):
 ````ProLog
-?- sentence(X,L,[]).
+sentence(X,L,[]).
 ````
