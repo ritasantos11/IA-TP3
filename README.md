@@ -31,13 +31,20 @@ Compilar o ponto 2:
 ### Instruções de execução do ponto 1:
 Saber informações do voo (dia, número, hora de partida, hora de chegada) de Origin até Destination:
 ````ProLog
-flight(Origin,Destination,Day,FlightNum,DepTime,ArrTime).
+flight(Origin, Destination, Day, FlightNum, DepTime, ArrTime).
 ````
 
 Saber a rota num determinado dia de Origin até Destination onde Route é dada da seguinte forma: [Origin-Destination:FlightNum:DepartureTime]:
 ````Prolog
 route(Origin,Destination,Day,Route).
 ````
+<br />
+
+Calcular um percurso para visitar várias cidades a partir de Origin e regressando lá, começando num determinado dia e acabando noutro:
+````Prolog
+course(Origin, ListOfCities, StartDay, EndDay, Course).
+````
+
 <br />
 
 ### Instruções de executação do ponto 2:
