@@ -39,12 +39,10 @@ Saber a rota num determinado dia de Origin até Destination onde Route é dada d
 route(Origin,Destination,Day,Route).
 ````
 <br />
-
 Calcular um percurso para visitar várias cidades a partir de Origin e regressando lá, começando num determinado dia e acabando noutro:
 ````Prolog
 course(Origin, ListOfCities, StartDay, EndDay, Course).
 ````
-
 <br />
 
 ### Instruções de executação do ponto 2:
