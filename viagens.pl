@@ -1,31 +1,71 @@
 :- op(50,xfy,:).
 
-% diz que existe um voo de Origin para Destination e a sua Hora de Partida e Chegada num determinado dia
+% diz que existe um voo de Origin para Destination, a sua Hora de Partida e Chegada num determinado dia
 flight(Origin, Destination, Day, FNum, DepTime, ArrTime) :-
-	timetable(Origin,Destination,ListaVoos),
-	member(DepTime/ArrTime/FNum/Days,ListaVoos),
-	verifyDay(Day,Days).
+	timetable(Origin, Destination, ListOfFlights),
+	member(DepTime/ArrTime/FNum/Days, ListOfFlights),
+	verifyDay(Day, Days).
 
-verifyDay(Day,alldays) :- member(Day,[mo,tu,we,th,fr,sa,su]).
-verifyDay(Day,ListofDays) :- member(Day,ListofDays).
+verifyDay(Day, Days) :- Days=alldays, Day=alldays.
+verifyDay(Day, ListOfDays) :- member(Day, ListOfDays).
+
 
 % voo direto de Origin para Destination
 route(Origin, Destination, Day, [Origin-Destination:FNum:DepTime]) :-
-	flight(Origin,Destination,Day,FNum,DepTime,_).
+	flight2(Origin, Destination, Day, FNum, DepTime, _).
 
 % não há voo direto de Origin para Destination
 route(Origin, Destination, Day, [(Origin-Place:FNum1:DepTime1)|RestRoute]) :-
-	route(Place,Destination,Day,RestRoute),
-	flight(Origin,Place,Day,FNum1,DepTime1,ArrTime1),
-	deptime(RestRoute,DepTime2),
-	transfer(ArrTime1,DepTime2).
+	not(timetable(Origin, Destination, _)),
+	route_aux(Origin, Destination, Day, [(Origin-Place:FNum1:DepTime1)|RestRoute]).
+
+route_aux(Origin, Destination, Day, [(Origin-Place:FNum1:DepTime1)|RestRoute]) :-
+	route(Place, Destination, Day, RestRoute),
+	flight2(Origin, Place, Day, FNum1, DepTime1, ArrTime1),
+	deptime(RestRoute, DepTime2),
+	transfer(ArrTime1, DepTime2).
+
+flight2(Origin, Destination, Day, FNum, DepTime, ArrTime) :-
+	timetable(Origin, Destination, ListOfFlights),
+	member(DepTime/ArrTime/FNum/Days, ListOfFlights),
+	verifyDay2(Day, Days).
+
+verifyDay2(Day, Days) :- Days=alldays, Day=alldays.
+verifyDay2(Day, alldays) :- member(Day, [mo,tu,we,th,fr,sa,su]).
+verifyDay2(Day, ListOfDays) :- member(Day, ListOfDays).
 
 % diz a Hora de Partida da Rota [_-_:_:DepTime]
 deptime([_-_:_:DepTime], DepTime).
 
 % há uma distância de pelo menos 40 minutos para se conseguir fazer transferência para outro voo
-transfer(Hour1:Min1,Hour2:Min2) :-
+transfer(Hour1:Min1, Hour2:Min2) :-
 	60*(Hour2-Hour1) + Min2-Min1 >= 40.
+
+
+% começando na cidade Origin visitar as cidades da lista ListOfCities e voltar à cidade Origin
+course(Origin, [City], StartDay, EndDay, Route) :-
+	L = [City],
+	length(L,1),
+	route(Origin, City, StartDay, Route2),
+	route(City, Origin, EndDay, Route3),
+	append(Route2, Route3, Route).
+
+course(Origin, [City|ListOfCities], StartDay, EndDay, Course) :-
+	route(Origin, City, StartDay, Route),
+	nextDay(StartDay, NextDay),
+	last(ListOfCities, LastCity),
+	course(City, ListOfCities, NextDay, Day, RestCourse),
+	append(Route, RestCourse, AlmostCourse),
+	route(LastCity, Origin, EndDay, LastRoute),
+	append(AlmostCourse, LastRoute, Course).
+
+nextDay(mo,tu).
+nextDay(tu,we).
+nextDay(we,th).
+nextDay(th,fr).
+nextDay(fr,sa).
+nextDay(sa,su).
+nextDay(su,mo).
 
 
 % timetable(Origin, Destination, [DepartureTime/ArrivalTime/FlightNumber/[Days]|L]).
