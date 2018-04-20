@@ -38,7 +38,7 @@ Saber a rota num determinado dia de Origin até Destination onde Route é dada d
 ````Prolog
 route(Origin,Destination,Day,Route).
 ````
-<br />
+
 Calcular um percurso para visitar várias cidades a partir de Origin e regressando lá, começando num determinado dia e acabando noutro:
 
 ````Prolog
